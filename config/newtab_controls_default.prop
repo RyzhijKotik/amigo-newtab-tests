@@ -1,0 +1,14 @@
+{
+    "ElementsControls":
+    {
+        "MenuHistoryLink": "//li[contains(@class, 'shortcut-link')]/button[contains(text(), 'стория')]",
+        "MenuDownloadsLink": "//li[contains(@class, 'shortcut-link')]/button[text()='Загрузки']",
+        "MenuBookmarksLink": "//li[contains(@class, 'shortcut-link')]/button[text()='Закладки']",
+
+        "WhatsNewLink": "//li[contains(@class, 'notifications-shortcut')]/button[text()='Что нового?']",
+
+        "PlusButton": "//button[contains(@class, 'add-button')]/img[@src='/img/plus.png']",
+
+        "PultSettings": "//li[contains(@class, 'settings-shortcut')]/button[text()='Настройки пульта']"
+    }
+}

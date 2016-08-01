@@ -1,0 +1,7 @@
+.idea/**
+output/**
+.tox/**
+*.pyc
+test-reports/**
+venv/**
+screenshots/**

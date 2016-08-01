@@ -1,0 +1,15 @@
+{
+    "ElementsOnboarding2":
+    {
+        "OnboardingHandlerWhiteRectangle": "//div[contains(@class, 'onboarding-handler')]",
+        "OnboardingHandlerTitle": "//div/header[@class='onboarding-header']/span[text()='Быстрый и удобный поиск']",
+        "OnboardingHandlerProgress": "//div/header[@class='onboarding-header']/span[text()='2 из 3']",
+        "OnboardingDescription": "//div[@class='onboarding-description']/span[contains(text(), 'Находите картинки, видео, рецепты — весь интернет готов помочь.')]",
+        "OnboardingCloseButton": "//div[@class='onboarding-buttons']/button[text()='Вернуться']",
+        "OnboardingCloseButton": "//div[@class='onboarding-buttons']/button[text()='Закрыть подсказки']",
+        "OnboardingNextButton": "//button[@class='onboarding-next-button']/img[@src='/img/onboarding/onboarding-arrow.png']",
+
+        "OnboardingBubbleIconImage": "//div/img[@class = 'bubble-icon-image'][@src = '/img/onboarding/search.png']",
+        "OnboardingBubbleText": "//label[contains(@class, 'bubble-label')][contains(text(), 'щите в интернете!')]"
+    }
+}

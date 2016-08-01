@@ -1,0 +1,7 @@
+{
+    "ElementsSwitcherDotsBoard1TwoBoads":
+    {
+        "BoardDotSwithcher_1": "//li[contains(@class, 'active')]/div[@class='board-dot-image ']",
+        "BoardDotSwithcher_2": "//li[not(contains(@class, 'active'))]/div[@class='board-dot-image ']"
+    }
+}

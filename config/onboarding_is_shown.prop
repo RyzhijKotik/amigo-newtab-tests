@@ -1,0 +1,17 @@
+{
+    "ElementsOnboarding":
+    {
+        "OnboardingGuide": "//div[contains(@class, 'onboarding-guide')]",
+        "OnboardingBubble": "//div[@class='bubble']",
+        "OnboardingBubbleArrow": "//div/img[@class = 'guide-arrow']",
+        "OnboardingBubbleIconImage": "//div/img[@class = 'bubble-icon-image'][@src = '/img/onboarding/menu.png']",
+        "OnboardingBubbleText": "//label[contains(@class, 'bubble-label')][text()='Смотрите!']",
+
+        "OnboardingHandlerWhiteRectangle": "//div[contains(@class, 'onboarding-handler')]",
+        "OnboardingHandlerTitle": "//div/header[@class='onboarding-header']/span[text()='Меню быстрого доступа']",
+        "OnboardingHandlerProgress": "//div/header[@class='onboarding-header']/span[text()='1 из 3']",
+        "OnboardingDescription": "//div[@class='onboarding-description']/span[contains(text(), ' и Загрузки можно перейти в один клик.')]",
+        "OnboardingCloseButton": "//div[@class='onboarding-buttons']/button[text()='Закрыть подсказки']",
+        "OnboardingNextButton": "//button[@class='onboarding-next-button']/img[@src='/img/onboarding/onboarding-arrow.png']"
+    }
+}

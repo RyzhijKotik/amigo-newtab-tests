@@ -1,0 +1,6 @@
+{
+    "ElementsAwitcherAreaLeft":
+    {
+        "BoardSwithcherArea_Left": "//div[contains(@class, 'switch-zone-clickable')][contains(@class, 'left')]"
+    }
+}

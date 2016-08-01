@@ -1,0 +1,9 @@
+{
+    "ElementsSearchBarNotFocused":
+    {
+        "SearchFormNotFocused": "//form[contains(@class, 'search-form')][not(contains(@class, 'form-shadow focused'))]",
+        "SearchInputWrapper": "//div[@class='search-input-wrapper']/input[@placeholder='Поиск в интернете']",
+        "SearchButton": "//button[@class='search-button']/span[@class='search-icon']",
+        "SearchExample": "//span[contains(@class, 'search-example')][contains(text(), 'Например, ')]"
+    }
+}

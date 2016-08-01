@@ -1,0 +1,15 @@
+{
+    "ElementsOnboarding3":
+    {
+        "OnboardingHandlerWhiteRectangle": "//div[contains(@class, 'onboarding-handler')]",
+        "OnboardingHandlerTitle": "//div/header[@class='onboarding-header']/span[text()='Любимые сайты под рукой']",
+        "OnboardingHandlerProgress": "//div/header[@class='onboarding-header']/span[text()='3 из 3']",
+        "OnboardingDescription": "//div[@class='onboarding-description']/span[contains(text(), 'Соберите свой набор сайтов и перемещайтесь в интернете быстрее.')]",
+        "OnboardingCloseButton": "//div[@class='onboarding-buttons']/button[text()='Вернуться']",
+        "OnboardingCloseButton": "//div[@class='onboarding-buttons']/button[text()='Закрыть подсказки']",
+        "OnboardingNextButton": "//button[@class='onboarding-next-button']/img[@src='/img/onboarding/onboarding-done.png']",
+
+        "OnboardingBubbleIconImage": "//div/img[@class = 'bubble-icon-image'][@src = '/img/onboarding/adding.png']",
+        "OnboardingBubbleText": "//label[contains(@class, 'bubble-label')][contains(text(), 'Добавляйте')]"
+    }
+}

@@ -1,0 +1,47 @@
+{
+    "ElementsBoard2Default":
+    {
+        "TileLinkCloud": "//div/a[@href='http://cloud.mail.ru']",
+        "TileTitleCloud": "//div[@class='tile-title-container']/span[contains(text(), 'Облако')]"
+    },
+    {
+        "TileLinkFB": "//div/a[@href='https://www.facebook.com/']",
+        "TileTitleFB": "//div[@class='tile-title-container']/span[contains(text(), 'facebook')]"
+    },
+    {
+        "TileLinkWikipedia": "//div/a[@href='http://www.wikipedia.org/']",
+        "TileTitleWikipedia": "//div[@class='tile-title-container']/span[contains(text(), 'Wikipedia')]"
+    },
+    {
+        "TileLinkInstagram": "//div/a[@href='http://instagram.com/']",
+        "TileTitleInstagram": "//div[@class='tile-title-container']/span[contains(text(), 'Instagram')]"
+    },
+    {
+        "TileLinkAskFM": "//div/a[@href='http://ask.fm/']",
+        "TileTitleAskFM": "//div[@class='tile-title-container']/span[contains(text(), 'Ask.fm')]"
+    },
+    {
+        "TileLinkDobroMailRu": "//div/a[@href='http://dobro.mail.ru']",
+        "TileTitleDobroMailRu": "//div[@class='tile-title-container']/span[contains(text(), 'Добро')]"
+    },
+    {
+        "TileLinkOtvetyMailRu": "//div/a[@href='http://otvet.mail.ru']",
+        "TileTitleOtvetyMailRu": "//div[@class='tile-title-container']/span[contains(text(), 'Ответы')]"
+    },
+    {
+        "TileLinkFotostrana": "//div/a[@href='http://fotostrana.ru/']",
+        "TileTitleFotostrana: "//div[@class='tile-title-container']/span[contains(text(), 'Фотострана')]"
+    },
+    {
+        "TileLinkTanks": "//div/a[@href='https://tanks.mail.ru/']",
+        "TileTitleTanks": "//div[@class='tile-title-container']/span[contains(text(), 'Ground')]"
+    },
+    {
+        "TileLinkWarface": "//div/a[@href='https://wf.mail.ru/']",
+        "TileTitleWarface": "//div[@class='tile-title-container']/span[contains(text(), 'Warface')]"
+    },
+    {
+        "TileLinkSkyForge": "//div/a[@href='https://sf.mail.ru/']",
+        "TileTitleSkyForge": "//div[@class='tile-title-container']/span[contains(text(), 'Skyforge')]"
+    }
+}
