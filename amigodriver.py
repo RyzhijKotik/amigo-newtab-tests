@@ -51,7 +51,7 @@ class AmigoDriver:
         """
         element_visibility = expected_conditions.visibility_of_element_located((By.XPATH, xpath))
         timeout_message = "Can not find element " + element_name + " - Xpath " + xpath
-        amigodriver_wait.AmigoDriverWait(self.amigo, timeout=5, poll_frequency=0.5).\
+        amigodriver_wait.AmigoDriverWait(self.amigo, timeout=10, poll_frequency=0.5).\
             until(element_visibility, element_name, timeout_message)
 
     def clickElement(self, xpath):
