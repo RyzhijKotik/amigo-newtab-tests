@@ -9,8 +9,7 @@ import amigodriver_wait
 
 class AmigoDriver:
 
-    """Launch Amigo Browser using chromedriver
-    with options path to amigo.exe, path to newtab.crx
+    """Launch Amigo Browser using chromedriver with options: path to amigo.exe, path to newtab.crx
     """
 
     def __init__(self, binary_path, crx_path):
