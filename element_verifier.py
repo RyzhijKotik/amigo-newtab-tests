@@ -7,6 +7,8 @@ If element doesn't exist we through assertation error
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import NoSuchElementException
 
 
 def elementVerifier(elements, amigo):
@@ -15,5 +17,10 @@ def elementVerifier(elements, amigo):
     :param amigo: AmigoDriver() object
     """
   for element in elements:
-    WebDriverWait(amigo.amigo, 3). \
-      until(EC.presence_of_element_located((By.XPATH, elements[element].encode('cp1251').decode('utf-8'))))
+    try:
+      WebDriverWait(amigo.amigo, 3). \
+        until(EC.presence_of_element_located((By.XPATH, elements[element].encode('cp1251').decode('utf-8'))))
+    except(TimeoutException):
+      return element
+
+

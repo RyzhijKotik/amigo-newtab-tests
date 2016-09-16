@@ -18,7 +18,9 @@ def verifyState(state, amigo):
         if key == 'Title':
             title_verifier.newtabTitle((state[key].encode('cp1251').decode('utf-8')), amigo)
         elif 'Elements' in key:
-            element_verifier.elementVerifier(state[key], amigo)
+            elem = element_verifier.elementVerifier(state[key], amigo)
+            if elem is not None:
+                return elem
 
 
 

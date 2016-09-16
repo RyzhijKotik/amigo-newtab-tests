@@ -52,11 +52,15 @@ class NewTabTest(unittest.TestCase):
         self._test = test
         self._config = config
         self._amigo = amigo
+        self._elem = None
 
     def tearDown(self):
         for method, error in self._outcome.errors:
             if error:
-                self._amigo.amigo.save_screenshot("test-reports\\screenshot-failure-" + self._name + time.strftime("%Y%m%d%H%M%S") + ".png")
+                if not os.path.exists("screenshots\\"):
+                    os.mkdir("screenshots\\")
+                self._amigo.amigo.save_screenshot("screenshots\\failure-" + self._elem + '-' + self._name
+                                            + time.strftime("%Y%m%d%H%M%S") + ".png")
         self._amigo.amigoClose()
 
     def id(self):
@@ -88,7 +92,7 @@ class NewTabTest(unittest.TestCase):
             #Verifies that the current machine state matches a given state.
             if i < len(self._test)-1:
                 state = self._test[i+1]
-                verifier_runner.verifyState(self._config.states[state], self._amigo)
+                self._elem = verifier_runner.verifyState(self._config.states[state], self._amigo)
 
 def mergePropertyDictionaries(current_property, new_property):
 
