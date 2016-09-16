@@ -1,10 +1,9 @@
+# This Python file uses the following encoding: utf-8
 __author__ = 'RyzhijKotik'
 
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.support import expected_conditions
-import amigodriver_wait
+
 
 
 class AmigoDriver:
@@ -33,7 +32,7 @@ class AmigoDriver:
         """
         close Amigo, quit chromedriver
         """
-        self.amigo.close()
+        self.amigo.quit()
 
     def getTitle(self):
         """
@@ -41,18 +40,6 @@ class AmigoDriver:
         :return: page title
         """
         return self.amigo.title
-
-    def findElement(self, xpath, element_name):
-        """
-        Looking if the element from .prop file is visible at NewTabPage
-        Timeout=10 sec is given to wait for NewTab page loading
-        :param xpath: selenium xpath to element (see onboarding_is_shown.prop for example)
-        :param element_name: name of element from .prop file, used only in timeout error message
-        """
-        element_visibility = expected_conditions.visibility_of_element_located((By.XPATH, xpath))
-        timeout_message = "Can not find element " + element_name + " - Xpath " + xpath
-        amigodriver_wait.AmigoDriverWait(self.amigo, timeout=10, poll_frequency=0.5).\
-            until(element_visibility, element_name, timeout_message)
 
     def clickElement(self, xpath):
         """

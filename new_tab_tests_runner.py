@@ -19,6 +19,7 @@ import xmlrunner
 import verifier_runner
 import command_runner
 import warnings
+import time
 from win32com.shell import shell, shellcon
 
 
@@ -51,6 +52,12 @@ class NewTabTest(unittest.TestCase):
         self._test = test
         self._config = config
         self._amigo = amigo
+
+    def tearDown(self):
+        for method, error in self._outcome.errors:
+            if error:
+                self._amigo.amigo.save_screenshot("test-reports\\screenshot-failure-" + self._name + time.strftime("%Y%m%d%H%M%S") + ".png")
+        self._amigo.amigoClose()
 
     def id(self):
         """Returns the name of the test.
@@ -168,6 +175,8 @@ def main():
     assert os.path.exists(crx_path), ('Could not find newtab.exe %s' %
                                                crx_path)
 
+    if not os.path.exists("test-reports\\"):
+        os.mkdir("test-reports\\")
     suite = unittest.TestSuite()
     amigo = amigodriver.AmigoDriver(local_appdata_path + args.binary_path, crx_path)
     config = parseConfigFile(args.config)
