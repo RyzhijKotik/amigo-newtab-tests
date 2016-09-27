@@ -190,7 +190,7 @@ def main():
         test_name = '%s.%s.%s' % (NewTabTest.__module__,
                                   NewTabTest.__name__,
                                   test['name'])
-        if not args.test or test_name in args.test:
+        if (not args.test or test_name in args.test) and 'Deprecated' not in test['name']:
             suite.addTest(NewTabTest(test['name'], test['traversal'], config, amigo))
 
     xmlrunner.XMLTestRunner(output='test-reports').run(suite)
