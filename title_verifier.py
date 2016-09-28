@@ -12,6 +12,6 @@ def newtabTitle(expected_title, amigo):
     :param amigo: AmigoDriver object
     """
 
-    assert expected_title == amigo.getTitle(), \
-        ('Page title is %s; Expected title is %s' %(amigo.getTitle(), expected_title)) if True else \
-            ('Page title is %s; Expected title is %s' %(amigo.getTitle(), expected_title))
+    assert expected_title == amigo.title, \
+        ('Page title is %s; Expected title is %s' %(amigo.title, expected_title)) if True else \
+            ('Page title is %s; Expected title is %s' %(amigo.title, expected_title))

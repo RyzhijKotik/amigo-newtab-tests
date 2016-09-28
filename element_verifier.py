@@ -10,7 +10,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from selenium.common.exceptions import NoSuchElementException
 
-
 def elementVerifier(elements, amigo):
   """
     :param elements: dictionary of expected elements from .prop files
@@ -18,7 +17,7 @@ def elementVerifier(elements, amigo):
     """
   for element in elements:
     try:
-      WebDriverWait(amigo.amigo, 3). \
+      WebDriverWait(amigo, 3). \
         until(EC.presence_of_element_located((By.XPATH, elements[element].encode('cp1251').decode('utf-8'))))
     except(TimeoutException):
       return element

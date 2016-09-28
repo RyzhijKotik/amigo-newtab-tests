@@ -10,7 +10,6 @@ Running tests from .config
 import sys
 import os
 import argparse
-import amigodriver
 import urllib
 import urllib.request
 import unittest
@@ -21,6 +20,7 @@ import command_runner
 import warnings
 import time
 from win32com.shell import shell, shellcon
+from selenium import webdriver
 
 
 class Config:
@@ -40,7 +40,7 @@ class NewTabTest(unittest.TestCase):
     """
     Tests a test from testsuite in config file
     """
-    def __init__(self, name, test, config, amigo):
+    def __init__(self, name, test, config, binary_path, crx_path):
 
         """
         :param name: The name of this test
@@ -51,17 +51,30 @@ class NewTabTest(unittest.TestCase):
         self._name = name
         self._test = test
         self._config = config
-        self._amigo = amigo
-        self._elem = None
+        self._elem = ""
+        self._binary_path = binary_path
+        self._crx_path = crx_path
+
+    def setUp(self):
+        """
+            Setting ChromeDriver options
+            :param binary_path: path to amigo.exe
+            :param crx_path: path to newtab.crx (url)
+            """
+        self.options = webdriver.ChromeOptions()
+        self.options.binary_location = self._binary_path
+        self.options.add_extension(self._crx_path)
+        self._amigo = webdriver.Chrome(chrome_options=self.options)
+        self._amigo.get("chrome://newtab")
 
     def tearDown(self):
         for method, error in self._outcome.errors:
             if error:
                 if not os.path.exists("screenshots\\"):
                     os.mkdir("screenshots\\")
-                self._amigo.amigo.save_screenshot("screenshots\\failure-" + self._elem + '-' + self._name
+                self._amigo.save_screenshot("screenshots\\failure-" + self._elem + '-' + self._name
                                             + time.strftime("%Y%m%d%H%M%S") + ".png")
-        self._amigo.amigoClose()
+        self._amigo.quit()
 
     def id(self):
         """Returns the name of the test.
@@ -182,7 +195,7 @@ def main():
     if not os.path.exists("test-reports\\"):
         os.mkdir("test-reports\\")
     suite = unittest.TestSuite()
-    amigo = amigodriver.AmigoDriver(local_appdata_path + args.binary_path, crx_path)
+    #amigo = amigodriver.AmigoDriver(local_appdata_path + args.binary_path, crx_path)
     config = parseConfigFile(args.config)
 
     for test in config.tests:
@@ -191,7 +204,7 @@ def main():
                                   NewTabTest.__name__,
                                   test['name'])
         if (not args.test or test_name in args.test) and 'Deprecated' not in test['name']:
-            suite.addTest(NewTabTest(test['name'], test['traversal'], config, amigo))
+            suite.addTest(NewTabTest(test['name'], test['traversal'], config, local_appdata_path + args.binary_path, crx_path))
 
     xmlrunner.XMLTestRunner(output='test-reports').run(suite)
 
