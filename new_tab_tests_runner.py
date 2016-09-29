@@ -93,19 +93,18 @@ class NewTabTest(unittest.TestCase):
 
         for i in range(0, len(self._test), 2):
             """
-            Going through tests array and filling the actions and states arrays.
-            Actions are even 0, 2, 4 etc.
-            States are odd 1, 2, 5 etc.
+            Going through tests array and filling the states and actions arrays.
+            States are even 0, 2, 4 etc.
+            Actions are odd 1, 2, 5 etc.
             """
-            action = self._test[i]
-
-            #Running an action from actions dictionary
-            command_runner.runCommand(self._config.actions[action], self._amigo)
-
+            state = self._test[i]
             #Verifies that the current machine state matches a given state.
+            self._elem = verifier_runner.verifyState(self._config.states[state], self._amigo)
+
             if i < len(self._test)-1:
-                state = self._test[i+1]
-                self._elem = verifier_runner.verifyState(self._config.states[state], self._amigo)
+                action = self._test[i+1]
+                # Running an action from actions dictionary
+                command_runner.runCommand(self._config.actions[action], self._amigo)
 
 def mergePropertyDictionaries(current_property, new_property):
 

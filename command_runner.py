@@ -7,13 +7,7 @@ Make an action from the actions dictionary: open, close, click element, hover el
 """
 
 def runCommand(command, amigo):
-    if command == 'open':
-        pass
-        #amigo.amigoOpen()
-    elif command == 'close':
-       # amigo.amigoClose()
-        pass
-    elif command[:5:] == 'click':
+    if command[:5:] == 'click':
         xpath = command[6::]
         elem = amigo.find_element_by_xpath(xpath)
         elem.click()
